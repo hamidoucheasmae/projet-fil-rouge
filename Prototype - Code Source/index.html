@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+ <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion des Formateurs </title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+
+
+  <div class="container">
+    <div class="alert alert alert-primary" role="alert">
+      <h4 class="text-primary text-center">GESTION DES FORMATEURS</h4>
+    </div>
+    <div class="col-3 mb-3 mt-3">
+      <button type="button" class="btn btn-primary add-btn" data-toggle="modal" data-target="#exampleModalCenter" id="addnewbtn">ADD NEW <i class="fa fa-user-circle-o"></i></button>
+    </div>
+    <!-- ADD Model -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Ajouter Formateur</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="add-form">
+              <div class="form-row">
+                <div class="col-12">
+                  <label for="inputName4">First Name</label>
+                  <input type="text" class="form-control Firstname" id="inputName4" placeholder="First name">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-12">
+                  <label for="inputLast4">Last Name</label>
+                  <input type="text" class="form-control Lastname"  id="inputLast4" placeholder="Last name">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-12">
+                  <label for="inputMatricule4">Matricule</label>
+                  <input type="number" class="form-control Matricule" id="inputMatricule4" placeholder="Matricule">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-12">
+                  <label for="inputEmail4">Email</label>
+                  <input type="email" class="form-control Email" id="inputEmail4" placeholder="Email">
+                </div>
+              </div>
+              
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary submit">ADD FORMER</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Edit a Former -->
+    <div class="modal fade " id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered show-edit" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Ajouter Formateur</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="edit-form">
+              <input type="hidden" name="" value="" class="sid">
+              <div class="form-row">
+                <div class="col-12">
+                  <label for="inputName4">First Name</label>
+                  <input type="text" class="form-control Firstname" id="inputName4" placeholder="First name">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-12">
+                  <label for="inputLast4">Last Name</label>
+                  <input type="text" class="form-control Lastname"  id="inputLast4" placeholder="Last name">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-12">
+                  <label for="inputMatricule4">Matricule</label>
+                  <input type="number" class="form-control Matricule" id="inputMatricule4" placeholder="Matricule">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-12">
+                  <label for="inputEmail4">Email</label>
+                  <input type="email" class="form-control Email" id="inputEmail4" placeholder="Email">
+                </div>
+              </div>
+              
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-success save-former">SAVE EDIT</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- table -->
+<table class="table" id="userstable">
+  <thead>
+    <tr>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Matricule</th>
+      <th scope="col">Email</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody class="FormersList">
+
+  </tbody>
+  </table>
+
+
+
+
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="Formerapp.js"></script>
+
+  </body>
+</html>
