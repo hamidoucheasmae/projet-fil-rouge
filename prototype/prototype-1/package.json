@@ -1,0 +1,12 @@
+{
+  "name": "prototype-1",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "cra-template": "1.1.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-scripts": "4.0.3",
+
+  "start": "node your-script.js"
+}
