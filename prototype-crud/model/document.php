@@ -6,18 +6,17 @@ class Document implements JsonSerializable {
         return array(
              'id' => $this->_id,
              'name' => $this->_name,
-             'last_name' => $this->_last_name,
-             'sexe' => $this->_sexe,
-             'gmail' => $this->_gmail,
+             'date_expiration' => $this->_date_expiration,
+             'etat' => $this->_etat,
+           
 			
         );
     }
 	private $_id;
 	private $_name;
-	private $_last_name;
-	private $_sexe;
-	private $_gmail;
-
+	private $_date_expiration;
+	private $_etat;
+	
 
 	public function __construct($data) {
 		$this->array_fill($data);
@@ -27,17 +26,16 @@ class Document implements JsonSerializable {
 	{
 		$this->setId ($data["id"]);
 		$this->setname ($data["name"]);
-		$this->setlast_name ($data["last_name"]);
-		$this->setsexe ($data["sexe"]);
-		$this->setgmail ($data["gmail"]);
-
+		$this->setdate_expiration ($data["date_expiration"]);
+		$this->setetat ($data["etat"]);
+		
 	}
 
 		public function id() { return $this->_id; }
 		public function name() { return $this->_name; }
-		public function last_name() { return $this->_last_name; }
-		public function sexe() { return $this->_sexe; }
-		public function gmail() { return $this->_gmail; }
+		public function date_expiration() { return $this->_date_expiration; }
+		public function etat() { return $this->_etat; }
+		
 
 
 		public function setId($id){
@@ -50,22 +48,18 @@ class Document implements JsonSerializable {
 					$this->_name = $name;
 			}
 		}
-		public function setlast_name($last_name){
-			if (is_string($last_name) && strlen($last_name) <= 255)
+		public function setdate_expiration($date_expiration){
+			if (is_string($date_expiration) && strlen($date_expiration) <= 255)
 			{
-					$this->_last_name = $last_name;
+					$this->_date_expiration = $date_expiration;
 			}
 		}
 
-		public function setsexe($sexe){
-				$this->_sexe = $sexe;
+		public function setetat($etat){
+				$this->_etat = $etat;
 		}
 
-		public function setgmail($gmail){
-				if (is_string($gmail) && strlen($gmail)){
-					$this->_gmail = $gmail;
-				}
-		}
+
 
 }
 ?>

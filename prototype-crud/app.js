@@ -1,14 +1,14 @@
 $(document).ready(function(){
-  var studentsList;
+  var documentsList;
   function getall() {
     $(".classeList").html(" ");
     $.ajax({
-      url:"/api/getProduct.php",
+      url:"/api/getDocument.php",
       method:"GET",
       success:function(data) {
-        studentsList = JSON.parse(data);
-        for (var i = 0; i < studentsList.length; i++) {
-          $(".classeList").append('<tr class="text-center"><td class="align-middle">' + studentsList[i]["numero"] + '</td><td class="align-middle">' + studentsList[i]["capacite"] + '</td><td class="align-middle">' + studentsList[i]["nb_tableaux"] + '</td><td class="align-middle">' + studentsList[i]["formateur"] +'</td><td class="align-middle"><span class="btn update-btn" data-toggle="modal" data-target="#exampleModal"><img src="edit.svg" width="40" height="40"></span><span class="btn delete-btn ml-2 mb-0 mt-0"><img src="trash.svg" width="40" height="40"></span><input type="hidden" value="" class="stdID"></td></tr>');
+        documentsList = JSON.parse(data);
+        for (var i = 0; i < documentsList.length; i++) {
+          $(".classeList").append('<tr class="text-center"><td class="align-middle">' + documentsList[i]["name"] + '</td><td class="align-middle">' + documentsList[i]["date_expiration"] + '</td><td class="align-middle">' + documentsList[i]["etat"] + '</td><td class="align-middle">' +'</td><td class="align-middle"><span class="btn update-btn" data-toggle="modal" data-target="#exampleModal"><img src="edit.svg" width="40" height="40"></span><span class="btn delete-btn ml-2 mb-0 mt-0"><img src="trash.svg" width="40" height="40"></span><input type="hidden" value="" class="stdID"></td></tr>');
         }
       }
     })
@@ -20,9 +20,9 @@ $(document).ready(function(){
 //     $("tr").hide();
 //     $(".edit-form").show();
 //     var index = $(this).parents("tr").index();
-//     $(".edit-form .cnumero").val(studentsList[index]["numero"]);
-//     $(".edit-form .ccapacite").val(studentsList[index]["capacite"]);
-//     $(".edit-form .cnb_tableaux").val(studentsList[index]["nb_tableaux"]);
+//     $(".edit-form .cdocument").val(studentsList[index]["document"]);
+//     $(".edit-form .cdate_expiration").val(studentsList[index]["date_expiration"]);
+//     $(".edit-form .cetat").val(studentsList[index]["etat"]);
 //     $(".edit-form .cformateur").val(studentsList[index]["formateur"]);
 //     $(".edit-form .sid").val(studentsList[index]["id"]);
 //     console.log($(".edit-form .sid").val())
@@ -31,9 +31,9 @@ $(document).ready(function(){
   
 //   // save-classe-to-database
 //   $(".save-student").click(function() {
-//     var Numero = $(".edit-form .cnumero").val();
-//     var Capacite = $(".edit-form .ccapacite").val();
-//     var Nb_tableaux = $(".edit-form .cnb_tableaux").val();
+//     var document = $(".edit-form .cdocument").val();
+//     var date_expiration = $(".edit-form .cdate_expiration").val();
+//     var etat = $(".edit-form .cetat").val();
 //     var Formateur = $(".edit-form .cformateur").val();
 //     var sID = $(".edit-form .sid").val();
     
@@ -44,9 +44,9 @@ $(document).ready(function(){
 //     method:"POST",
 //     data:{
 //       sid : sID,
-//       numero : Numero,
-//       capacite : Capacite,
-//       nb_tableaux : Nb_tableaux,
+//       document : document,
+//       date_expiration : date_expiration,
+//       etat : etat,
 //       formateur : Formateur
 //     },
 //         success:function(data) {
@@ -60,18 +60,18 @@ $(document).ready(function(){
   
 //   // Add a classroom to database
 //   $(".enrg-salle").click(function() {
-//     var Numero = $(".cnumero").val();
-//     var Capacite = $(".ccapacite").val();
-//     var Nb_tableaux = $(".cnb_tableaux").val();
+//     var document = $(".cdocument").val();
+//     var date_expiration = $(".cdate_expiration").val();
+//     var etat = $(".cetat").val();
 //     var Formateur = $(".cformateur").val();
   
 //     $.ajax({
 //       url:"/api/addclasses.php",
 //       method:"POST",
 //       data:{
-//         numero :Numero,
-//         capacite :Capacite,
-//         nb_tableaux :Nb_tableaux,
+//         document :document,
+//         date_expiration :date_expiration,
+//         etat :etat,
 //         formateur :Formateur
 //       },
 //       success:function(data) {
