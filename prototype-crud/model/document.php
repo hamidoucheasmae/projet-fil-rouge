@@ -18,42 +18,38 @@ class Document implements JsonSerializable {
 	private $_etat;
 	
 
-	public function __construct($data) {
-		$this->array_fill($data);
-	}
-
-	public function array_fill( $data)
-	{
-		$this->setId ($data["id"]);
-		$this->setname ($data["name"]);
-		$this->setdate_expiration ($data["date_expiration"]);
-		$this->setetat ($data["etat"]);
+	public function __construct() {
 		
 	}
 
-		public function id() { return $this->_id; }
-		public function name() { return $this->_name; }
-		public function date_expiration() { return $this->_date_expiration; }
-		public function etat() { return $this->_etat; }
+	// public function array_fill( $data)
+	// {
+	// 	$this->setId ($data["id"]);
+	// 	$this->setname ($data["name"]);
+	// 	$this->setdate_expiration ($data["date_expiration"]);
+	// 	$this->setetat ($data["etat"]);
+		
+	// }
+
+		public function getid() { return $this->_id; }
+		public function getname() { return $this->_name; }
+		public function getdate_expiration() { return $this->_date_expiration; }
+		public function getetat() { return $this->_etat; }
 		
 
 
-		public function setId($id){
+		public function setid($id){
 			$this->_id = (int) $id;
 		}
 
 		public function setname($name){
-			if (is_string($name) && strlen($name) <= 255)
-			{
 					$this->_name = $name;
 			}
-		}
-		public function setdate_expiration($date_expiration){
-			if (is_string($date_expiration) && strlen($date_expiration) <= 255)
-			{
+		
+		public function setdate_expiration($date_expiration){	
 					$this->_date_expiration = $date_expiration;
 			}
-		}
+		
 
 		public function setetat($etat){
 				$this->_etat = $etat;

@@ -58,27 +58,27 @@ $(document).ready(function(){
   
   
   
-//   // Add a classroom to database
-//   $(".enrg-salle").click(function() {
-//     var document = $(".cdocument").val();
-//     var date_expiration = $(".cdate_expiration").val();
-//     var etat = $(".cetat").val();
-//     var Formateur = $(".cformateur").val();
+  // Add a document to database
+  $(".enrg-document").click(function() {
+    var document = $(".document").val();
+    var date_expiration = $(".date_expiration").val();
+    var etat = $(".etat").val();
+   
   
-//     $.ajax({
-//       url:"/api/addclasses.php",
-//       method:"POST",
-//       data:{
-//         document :document,
-//         date_expiration :date_expiration,
-//         etat :etat,
-//         formateur :Formateur
-//       },
-//       success:function(data) {
-//       getall();
-//     }
-//     })
-//   })
+    $.ajax({
+      url:"/api/addDocument.php",
+      method:"POST",
+      data:{
+        name :document,
+        date_expiration :date_expiration,
+        etat :etat,
+       
+      },
+      success:function(data) {
+      getall();
+    }
+    })
+  })
 
 //   // delete
 
@@ -121,4 +121,10 @@ $(document).ready(function(){
   
 
 // })
+
+  
+
+
+
+
   })
