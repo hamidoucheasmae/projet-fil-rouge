@@ -20,11 +20,11 @@ $(document).ready(function(){
 //     $("tr").hide();
 //     $(".edit-form").show();
 //     var index = $(this).parents("tr").index();
-//     $(".edit-form .cdocument").val(studentsList[index]["document"]);
-//     $(".edit-form .cdate_expiration").val(studentsList[index]["date_expiration"]);
-//     $(".edit-form .cetat").val(studentsList[index]["etat"]);
-//     $(".edit-form .cformateur").val(studentsList[index]["formateur"]);
-//     $(".edit-form .sid").val(studentsList[index]["id"]);
+//     $(".edit-form .cdocument").val(documentsList[index]["document"]);
+//     $(".edit-form .cdate_expiration").val(documentsList[index]["date_expiration"]);
+//     $(".edit-form .cetat").val(documentsList[index]["etat"]);
+//     $(".edit-form .cformateur").val(documentsList[index]["formateur"]);
+//     $(".edit-form .sid").val(documentsList[index]["id"]);
 //     console.log($(".edit-form .sid").val())
    
 //   });
@@ -80,51 +80,47 @@ $(document).ready(function(){
     })
   })
 
-//   // delete
+  // delete
 
-//   $("body").on("click",".delete-btn",function() {
-//     var index = $(this).parents("tr").index();
-//     $(".classeList .stdID").val(studentsList[index]["id"]);
-//     var studentID =$(".classeList .stdID").val();
-//     $.ajax({
-//       url:"/api/deleteclasses.php",
-//       method:"POST",
-//       data:{
-//         sid :studentID
-//       },
-//       success:function(data) {
-//         $(this).parent().remove();
-//         getall();
-//       }
-//     })
-//   })
-//   $(".downArrow").click(function() {
-//     $(".add-form").show();
-//   })
-//   $(".update-btn").click(function() {
-//     $(".edit-form").show();
-//   })
-//   $(".save-student").click(function() {
-//   $(".edit-form").hide();
-//   })
-//   $(".enrg-salle").click(function() {
-//   $(".modal").hide();
-//   location.reload();
-//   })
-//   $(".close").click(function() {
-//   $(".add-form").hide();
-//   })
-//   $(".close").click(function() {
-//   $(".edit-form").hide("fast",function() {
-//   getall();
-//   });
+  $("body").on("click",".delete-btn",function() {
+    var index = $(this).parents("tr").index();
+    $(".classeList .stdID").val(documentsList[index]["id"]);
+    var studentID =$(".classeList .stdID").val();
+    $.ajax({
+      url:"/api/deleteDocument.php",
+      method:"POST",
+      data:{
+        sid :studentID
+      },
+      success:function(data) {
+        $(this).parent().remove();
+        getall();
+      }
+    })
+  })
+  $(".downArrow").click(function() {
+    $(".add-form").show();
+  })
+  $(".update-btn").click(function() {
+    $(".edit-form").show();
+  })
+  $(".save-student").click(function() {
+  $(".edit-form").hide();
+  })
+  $(".enrg-salle").click(function() {
+  $(".modal").hide();
+  location.reload();
+  })
+  $(".close").click(function() {
+  $(".add-form").hide();
+  })
+  $(".close").click(function() {
+  $(".edit-form").hide("fast",function() {
+  getall();
+  });
   
 
-// })
-
-  
-
-
+})
 
 
   })

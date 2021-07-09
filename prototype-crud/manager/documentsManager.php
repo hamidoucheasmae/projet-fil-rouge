@@ -16,6 +16,7 @@ class DocumentsManager  {
 		$result = $dbh->query($req)->fetchAll();
 		foreach ($result as $row){
 			$item = new document($row);
+			$item->setid($row["id"]);
 			$item->setname($row["name"]);
 			$item->setdate_expiration($row["date_expiration"]);
 			$item->setetat($row["etat"]);
@@ -36,8 +37,25 @@ public function add($document){
 	$addDocumentQuery -> bindParam(":etat",$document->getetat(),PDO::PARAM_STR);
 	$addDocumentQuery->execute();
 }
+		// delete document
 
+	// 	public function delete($id){
+	// 		$dbh = new PDO("mysql:host=localhost;dbname=documents_manager","root","solicode123");
 
+	// $req = "INSERT INTO `documents`(`id`,`name`, `date_expiration`,`etat`) VALUES (:id,:name,:date_expiration,:etat)";
+	// 		$req = "DELETE FROM documents WHERE id = $id";
+	// $req = "INSERT INTO `documents`(`id`,`name`, `date_expiration`,`etat`) VALUES (:id,:name,:date_expiration,:etat)";
+	// 		$deleteDocument = $dbh->prepare($req);
+    //         $deleteDocument->execute();
+    //     }
+		public function delete($id){
+    	
+			$dbh = new PDO("mysql:host=localhost;dbname=documents_manager","root","solicode123");
+	
+			$req = "DELETE FROM documents WHERE id = $id ";
+			$deleteDocument= $dbh->prepare($req);
+			$deleteDocument->execute();
+		}
 
 }
 ?>
