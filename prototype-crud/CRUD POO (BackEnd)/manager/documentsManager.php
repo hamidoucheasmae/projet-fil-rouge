@@ -42,5 +42,21 @@ public function add($document){
 			$deleteDocument->execute();
 		}
 
+
+// update Document		
+		public function update($document){
+			$id = $document->getid();
+			$dbh = new PDO("mysql:host=localhost;dbname=documents_manager","root","solicode123");
+			$req = "UPDATE documents SET name = :name,date_expiration = :date_expiration,etat = :etat WHERE id = $id";
+			$updateDocumentQuery = $dbh ->prepare($req);
+	$updateDocumentQuery -> bindParam(":id",$document->getid(),PDO::PARAM_STR);	
+	$updateDocumentQuery -> bindParam(":name",$document->getname(),PDO::PARAM_STR);
+	$updateDocumentQuery -> bindParam(":date_expiration",$document->getdate_expiration(),PDO::PARAM_STR);
+	$updateDocumentQuery -> bindParam(":etat",$document->getetat(),PDO::PARAM_STR);
+	$updateDocumentQuery->execute();
+        }
+
+
+
 }
 ?>

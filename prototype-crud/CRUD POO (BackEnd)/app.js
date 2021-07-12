@@ -15,46 +15,46 @@ $(document).ready(function(){
   }
   getall();
   
-//   //update-btn-on-click
-//   $("body").on("click",".classeList .update-btn",function() {
-//     $("tr").hide();
-//     $(".edit-form").show();
-//     var index = $(this).parents("tr").index();
-//     $(".edit-form .cdocument").val(documentsList[index]["document"]);
-//     $(".edit-form .cdate_expiration").val(documentsList[index]["date_expiration"]);
-//     $(".edit-form .cetat").val(documentsList[index]["etat"]);
-//     $(".edit-form .cformateur").val(documentsList[index]["formateur"]);
-//     $(".edit-form .sid").val(documentsList[index]["id"]);
-//     console.log($(".edit-form .sid").val())
+  //update-btn-on-click
+  $("body").on("click",".documentsList .update-btn",function() {
+    $("tr").hide();
+    $(".edit-form").show();
+    var index = $(this).parents("tr").index();
+    $(".edit-form .document").val(documentsList[index]["document"]);
+    $(".edit-form .date_expiration").val(documentsList[index]["date_expiration"]);
+    $(".edit-form .etat").val(documentsList[index]["etat"]);
    
-//   });
+    $(".edit-form .sid").val(documentsList[index]["id"]);
+    console.log($(".edit-form .sid").val())
+   
+  });
   
-//   // save-classe-to-database
-//   $(".save-student").click(function() {
-//     var document = $(".edit-form .cdocument").val();
-//     var date_expiration = $(".edit-form .cdate_expiration").val();
-//     var etat = $(".edit-form .cetat").val();
-//     var Formateur = $(".edit-form .cformateur").val();
-//     var sID = $(".edit-form .sid").val();
+  // save-classe-to-database
+  $(".save-document").click(function() {
+    var document = $(".edit-form .document").val();
+    var date_expiration = $(".edit-form .date_expiration").val();
+    var etat = $(".edit-form .etat").val();
+    var Formateur = $(".edit-form .formateur").val();
+    var sid = $(".edit-form .sid").val();
     
-//     console.log(sID)
-//    //send to php file via ajax
-//    $.ajax({
-//     url:"api/editclasses.php",
-//     method:"POST",
-//     data:{
-//       sid : sID,
-//       document : document,
-//       date_expiration : date_expiration,
-//       etat : etat,
-//       formateur : Formateur
-//     },
-//         success:function(data) {
-//           console.log(data)
-//         getall();
-//       }
-//   })
-//   })
+    console.log(sid)
+   //send to php file via ajax
+   $.ajax({
+    url:"api/updateDocument.php",
+    method:"POST",
+    data:{
+      sid : sid,
+      document : document,
+      date_expiration : date_expiration,
+      etat : etat,
+     
+    },
+        success:function(data) {
+          console.log(data)
+        getall();
+      }
+  })
+  })
   
   
   
