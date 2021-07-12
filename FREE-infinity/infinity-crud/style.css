@@ -1,0 +1,81 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(#03045e , #caf0f8 );
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+.table td, .table th {
+    padding: 0px;
+    color:#03045e;
+    width: 200px;
+    height: 45px;
+    background-color: #ffffff63 !important;
+}
+
+.table th{
+    border: none;
+}
+
+.btn{
+	padding: .175rem .175rem;
+}
+.btn-success{
+    background: #83b69200 !important;
+    border: none;
+}
+
+.btn-primary{
+    background: #03045e !important; 
+    border: none;
+}
+    .table-wrapper {
+        background: #ffffff63;
+        padding: 20px 25px;
+        margin: 30px 0;
+        border-radius: 3px;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.164);
+        position: relative;
+        top: 8vh;
+    }
+.table-title {        
+    padding-bottom: 15px;
+    background: #03045e;
+    color: #fff;
+    padding: 16px 30px;
+    margin: -20px -25px 10px;
+    border-radius: 3px 3px 0 0;
+}
+.table-title h1 {
+    margin: 15px;
+    font-weight: 600;
+}
+.table-title .btn {
+    float: right;
+    margin: 0px;
+    
+}
+ .add{
+     margin: 0;
+ }
+
+ .modal-header {
+     background: #03045e;
+     color: #fff;
+ }
+
+ .close span{
+     color: #fff;
+ }
+
+ @media (max-width: 990px) {
+     h1{
+        font-weight: 400;
+        font-size: 2rem;
+     }
+ }
+
