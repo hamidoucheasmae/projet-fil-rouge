@@ -3,7 +3,7 @@
 require_once('../model/document.php');
 
 class DocumentsManager  {
-	
+	// get document
 	public function getList(){
 		$dbh = new PDO("mysql:host=localhost;dbname=documents_manager","root","solicode123");
 		$stack = array();

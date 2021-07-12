@@ -16,7 +16,7 @@ $(document).ready(function(){
   getall();
   
   //update-btn-on-click
-  $("body").on("click",".documentsList .update-btn",function() {
+  $("body").on("click",".classeList .update-btn",function() {
     $("tr").hide();
     $(".edit-form").show();
     var index = $(this).parents("tr").index();
@@ -107,7 +107,7 @@ $(document).ready(function(){
   $(".save-document").click(function() {
   $(".edit-form").hide();
   })
-  $(".enrg-salle").click(function() {
+  $(".save-document").click(function() {
   $(".modal").hide();
   location.reload();
   })
