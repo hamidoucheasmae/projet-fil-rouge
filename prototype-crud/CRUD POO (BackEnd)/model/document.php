@@ -8,8 +8,7 @@ class Document implements JsonSerializable {
              'name' => $this->_name,
              'date_expiration' => $this->_date_expiration,
              'etat' => $this->_etat,
-           
-			
+    	
         );
     }
 	private $_id;
