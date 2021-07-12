@@ -55,8 +55,5 @@ public function add($document){
 	$updateDocumentQuery -> bindParam(":etat",$document->getetat(),PDO::PARAM_STR);
 	$updateDocumentQuery->execute();
         }
-
-
-
 }
 ?>

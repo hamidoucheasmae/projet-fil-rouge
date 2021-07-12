@@ -6,7 +6,7 @@ $document->setname($_POST["name"]);
 $document->setdate_expiration($_POST["date_expiration"]);
 $document->setetat($_POST["etat"]);
 
-$updatedocumentManager = null;
+$updatedocumentsManager = null;
 $updatedocumentManager =  new documentsManager(); 
 $updatedocumentQuery = $updatedocumentManager->update($document);
 ?>

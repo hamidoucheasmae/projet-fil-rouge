@@ -24,8 +24,8 @@ $(document).ready(function(){
     $(".edit-form .date_expiration").val(documentsList[index]["date_expiration"]);
     $(".edit-form .etat").val(documentsList[index]["etat"]);
    
-    $(".edit-form .sid").val(documentsList[index]["id"]);
-    console.log($(".edit-form .sid").val())
+    $(".edit-form .id").val(documentsList[index]["id"]);
+    console.log($(".edit-form .id").val())
    
   });
   
@@ -34,16 +34,16 @@ $(document).ready(function(){
     var document = $(".edit-form .document").val();
     var date_expiration = $(".edit-form .date_expiration").val();
     var etat = $(".edit-form .etat").val();
-    var Formateur = $(".edit-form .formateur").val();
-    var sid = $(".edit-form .sid").val();
+  
+    var id = $(".edit-form .id").val();
     
-    console.log(sid)
+    console.log(id)
    //send to php file via ajax
    $.ajax({
     url:"api/updateDocument.php",
     method:"POST",
     data:{
-      sid : sid,
+      id : id,
       document : document,
       date_expiration : date_expiration,
       etat : etat,
@@ -59,7 +59,7 @@ $(document).ready(function(){
   
   
   // Add a document to database
-  $(".enrg-document").click(function() {
+  $(".save-document").click(function() {
     var document = $(".document").val();
     var date_expiration = $(".date_expiration").val();
     var etat = $(".etat").val();
@@ -104,7 +104,7 @@ $(document).ready(function(){
   $(".update-btn").click(function() {
     $(".edit-form").show();
   })
-  $(".save-student").click(function() {
+  $(".save-document").click(function() {
   $(".edit-form").hide();
   })
   $(".enrg-salle").click(function() {
