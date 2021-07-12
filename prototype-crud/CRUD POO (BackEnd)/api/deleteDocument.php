@@ -4,5 +4,5 @@ require_once '../manager/documentsManager.php';
 
 $deleteDocumentManager = null;
 $deleteDocumentManager =  new documentsManager(); 
-$deleteDocumentQuery = $deletedocumentManager->delete($_POST["id"]);
+$deleteDocumentQuery = $deleteDocumentManager->delete($_POST["id"]);
 ?>

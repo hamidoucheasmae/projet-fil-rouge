@@ -90,7 +90,7 @@ $(document).ready(function(){
       url:"/api/deleteDocument.php",
       method:"POST",
       data:{
-        sid :studentID
+        id :studentID
       },
       success:function(data) {
         $(this).parent().remove();
