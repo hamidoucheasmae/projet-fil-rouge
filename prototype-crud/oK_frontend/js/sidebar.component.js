@@ -6,7 +6,7 @@ class SideBar extends React.Component {
     render() {
 
         return (
-            <aside className="main-sidebar sidebar-dark-primary elevation-4">
+            <aside className="main-sidebar sidebar-light-primary elevation-4">
            
             {/* Sidebar */}
             <div className="sidebar">
@@ -30,6 +30,26 @@ class SideBar extends React.Component {
                       <p>Mes Documents</p>
                     </a>
                   </li>
+               
+        {/* Mes documents */}
+        <li className="nav-item">
+          <a href="#" className="nav-link">
+            <i className="nav-icon fas fa-file" />
+            <p> Mes Documents</p>
+          </a>
+        </li> 
+        {/* calendar */}
+        <li className="nav-item">
+          <a href="calendar.html" className="nav-link">
+            <i className="nav-icon far fa-calendar-alt" />
+            <p>
+              Calendar
+              <span className="badge badge-info right">2</span>
+            </p>
+          </a>
+        </li>
+
+
                 </ul>
               </nav>
               {/* /.sidebar-menu */}

@@ -11,9 +11,11 @@ class Menu extends React.Component {
               <a className="nav-link" data-widget="pushmenu" href="#" role="button"><i className="fas fa-bars" /></a>
             </li>
             <li className="nav-item d-none d-sm-inline-block">
-              <a href="ouvriers.html" className="nav-link">Ouvriers</a>
+              <a href="ouvriers.html" className="nav-link">Mes Documents</a>
             </li>
           </ul>
+        
+
         
               
         </nav>

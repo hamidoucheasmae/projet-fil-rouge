@@ -46,7 +46,7 @@ class CrudDocument extends React.Component {
     // Remove Document
     removedocument(i) {
         $.ajax({
-            url: "api/deleteDocment.php",
+            url: "api/deleteDocument.php",
             method: "POST",
             data: {
                 id: i
