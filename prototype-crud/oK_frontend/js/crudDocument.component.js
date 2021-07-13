@@ -27,12 +27,12 @@ class CrudDocument extends React.Component {
     //add Document
     adddocument(e) {
         $.ajax({
-            url: "../api/addDocument.php",
+            url: "api/addDocument.php",
             method: "POST",
             data: {
                 name : adddocumentname.value,
                 date_expiration : adddate_expiration.value,
-                etat : etat.value
+                etat : addetat.value
                
             },
             success: function (data) {
@@ -46,7 +46,7 @@ class CrudDocument extends React.Component {
     // Remove Document
     removedocument(i) {
         $.ajax({
-            url: "../api/deleteDocment.php",
+            url: "api/deleteDocment.php",
             method: "POST",
             data: {
                 id: i
@@ -63,12 +63,12 @@ class CrudDocument extends React.Component {
         $.ajax({
             url: "api/updateDocment.php",
             method: "POST",
-            // data: {
-            //     id : i,
-            //     name: Name.value,
-            //     date_expiration: updateExpiration.value,
-            //     etat: etat.value
-            // },
+            data: {
+                id : i,
+                name: hhhhame.value,
+                date_expiration: updateExpiration.value,
+                etat: etat.value
+            },
             success: function (data) {
                 this.chargementDonnees()
                 console.log(data)
@@ -126,14 +126,14 @@ class CrudDocument extends React.Component {
                                     <div className="form-row">
                                         <div className="form-group col-12">
                                             <label htmlFor="inputLast4">Date d'expiration</label>
-                                            <input type="date" className="form-control adddate_expiration" id="date_expiration" placeholder="Last name" />
+                                            <input type="text" className="form-control date_expiration" id="adddate_expiration" placeholder="Last name" />
                                         </div>
                                     </div>
 
                                     <div className="form-row">
                                         <div className="form-group col-12">
                                             <label htmlFor="inputMatricule4">Etat</label>
-                                            <input type="text" className="form-control etat" id="etat" placeholder="etat de document" />
+                                            <input type="text" className="form-control etat" id="addetat" placeholder="etat de document" />
                                         </div>
                                     </div>
 
@@ -141,7 +141,7 @@ class CrudDocument extends React.Component {
 
                                     <div className="input-group text-right">
                                         <div className="input-group-btn">
-                                        <button type="submit" className="btn btn-primary submit ">AJOUTER DOCUMENT</button>
+                                        <button type="submit" className="btn btn-primary submit  ">AJOUTER DOCUMENT</button>
  
                                         </div>
                                     </div>
