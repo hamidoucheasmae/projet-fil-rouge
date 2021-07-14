@@ -22,11 +22,11 @@ class SideBar extends React.Component {
               </div>
               {/* Sidebar Menu */}
               <nav className="mt-2">
-                <ul className="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <ul className="nav nav-pills nav-sidebar flex-column " data-widget="treeview" role="menu" data-accordion="false">
                   {/* Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library */}
-                  <li className="nav-item">
-                    <a href="dashboard.html" className="nav-link">
+                  <li className="nav-item active">
+                    <a href="dashboard.html" className="nav-link active">
                       <i className="nav-icon fas fa-tachometer-alt" />
                       <p>Dashboard</p>
                     </a>
@@ -34,7 +34,7 @@ class SideBar extends React.Component {
                
         {/* Mes documents */}
         <li className="nav-item">
-          <a href="mesDocuments.html" className="nav-link active">
+          <a href="mesDocuments.html" className="nav-link">
             <i className="nav-icon fas fa-file" />
             <p> Mes Documents</p>
           </a>

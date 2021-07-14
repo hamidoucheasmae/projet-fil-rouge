@@ -1,4 +1,4 @@
-class App2 extends React.Component {
+class AppDashboard extends React.Component {
     constructor(props) {
         super(props)
     }
@@ -36,7 +36,7 @@ class App2 extends React.Component {
                 </div>
               </div>
               <div className="card-body">
-                <CrudDocument />
+              
               </div>
               {/* /.card-body */}
               <div className="card-footer">
