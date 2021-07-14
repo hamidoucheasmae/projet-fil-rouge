@@ -16,7 +16,7 @@ class SideBar extends React.Component {
                   <img src="dist/img/user2-160x160.jpg" className="img-circle elevation-2" alt="User Image" />
                 </div>
                 <div className="info">
-                  <a href="#" className="d-block">Hamidouche Asmae</a>
+                  <a href="#" className="d-block"></a>
                 </div>
               </div>
               {/* Sidebar Menu */}

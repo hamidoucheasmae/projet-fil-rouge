@@ -30,6 +30,7 @@ class CrudDocument extends React.Component {
             url: "api/addDocument.php",
             method: "POST",
             data: {
+                name : addclientname.value,
                 name : adddocumentname.value,
                 date_expiration : adddate_expiration.value,
                 etat : addetat.value
@@ -147,8 +148,7 @@ class CrudDocument extends React.Component {
                                     </div>
                                 </form>
                             </div>
-                            <div className="modal-footer">
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -166,6 +166,7 @@ class CrudDocument extends React.Component {
                         </tr>
                     </thead>
                     <tbody>
+                      
                         {documentsArray}
                     </tbody>
                 </table>

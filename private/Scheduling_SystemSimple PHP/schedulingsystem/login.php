@@ -6,7 +6,8 @@ session_start();
  
   if ($username&&$password)
   {
-	 $connect = mysql_connect("localhost", "root", "")or die("couldn't connect to the database!");
+
+	 $connect = mysql_connect("localhost","dbname=insertion", "root", "solicode123")or die("couldn't connect to the database!");
 	 mysql_select_db("insertion") or die ("couldn't find database!");
 	 
 	 $query = mysql_query("SELECT * FROM admin WHERE username='$username'");

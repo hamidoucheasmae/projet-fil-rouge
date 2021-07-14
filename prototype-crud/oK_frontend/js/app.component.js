@@ -12,6 +12,7 @@ class App extends React.Component {
           <Menu />
 
           <SideBar />
+         
 
           
 
