@@ -61,8 +61,7 @@ body {
 		</div>
 	</div>
 
-</body>
-</html>
+</body>~
 <?php 
    $path = $_SERVER['DOCUMENT_ROOT'];
    $path .= "footer.php";

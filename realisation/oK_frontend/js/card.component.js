@@ -17,7 +17,18 @@ class Card extends React.Component {
                     {/* small box */}
                     <div className="small-box bg-light">
                       <div className="inner">
-                        <h3>150</h3>
+                        <h3>150
+                       
+                                           $query = \"SELECT COUNT(*) totalManager FROM managers;\"; 
+                                                 $result = mysqli_query( $connection, $query ); 
+                                                 $totalManager = mysqli_fetch_assoc( $result ); 
+                                                 echo $totalManager['totalManager']; 
+                                          
+                        </h3>
+
+
+
+                        
                         <p>New Orders</p>
                       </div>
                       <div className="icon">
