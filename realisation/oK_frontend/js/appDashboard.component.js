@@ -30,7 +30,7 @@ class AppDashboard extends React.Component {
             <div className="card">
               
               <div className="card-body">
-                <CrudDashboard />
+                {/* <CrudDashboard /> */}
               </div>
               {/* /.card-body */}
              
