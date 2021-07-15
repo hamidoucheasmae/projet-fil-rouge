@@ -9,9 +9,9 @@
 			$this->name = $name;
 		}
 
-		public function getname() {
-			return $this->name;
-		}
+		// public function getname() {
+		// 	return $this->name;
+		// }
 
 		public function getEmail() {
 			$query = mysqli_query($this->con, "SELECT email FROM clients WHERE name='$this->name'");
@@ -24,7 +24,7 @@
 			$row = mysqli_fetch_array($query);
 			return $row['name'];
 		}
-		public function getnJJJJame() {
+		public function getname() {
 			$query = mysqli_query($this->con, "SELECT name FROM clients WHERE name='$this->name'");
 			$row = mysqli_fetch_array($query);
 			return $row['firstName'];
@@ -34,5 +34,8 @@
 			$row = mysqli_fetch_array($query);
 			return $row['profilePic'];
 		}
+
+		
+
 	}
 ?>

@@ -122,6 +122,11 @@ class CrudDocument extends React.Component {
                                         <div className="form-group col-12">
                                             <label htmlFor="inputName4">Document</label>
                                             <input type="text" className="form-control name" id="adddocumentname" placeholder="entrer votre document" />
+                                            {/* <select className="custom-select rounded-0 name" id="adddocumentname" >
+        <option>Value 1</option>
+        <option>Value 2</option>
+        <option>Value 3</option>
+      </select> */}
                                         </div>
                                     </div>
                                     <div className="form-row">

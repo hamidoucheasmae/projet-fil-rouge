@@ -17,7 +17,9 @@ class SideBar extends React.Component {
                 </div>
                 <div className="info">
                   <a href="#" className="d-block"> 
-                 asmae ha</a>
+                  {/* <?php echo $userLoggedIn->getFirstName(); ?>  */}
+                  asmae
+                   </a>
                 </div>
               </div>
               {/* Sidebar Menu */}
