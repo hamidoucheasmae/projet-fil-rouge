@@ -50,6 +50,13 @@ class SideBar extends React.Component {
           </a>
         </li>
 
+        <li className="nav-item">
+        <a href="logout.php" classname="nav-link">
+          <i classname="nav-icon fas fa-tachometer-alt">
+            <p>logout</p>
+          </i></a><i classname="nav-icon fas fa-tachometer-alt">
+        </i>
+        </li>
 
                 </ul>
               </nav>

@@ -39,6 +39,12 @@
   <script type="text/babel" src="js/card.component.js"></script>
   <script type="text/babel" src="js/appDashboard.component.js"></script>
   <script type="text/babel" src="js/scriptDashboard.js"></script>
- 
+  <script>
+    function logout() {
+        $.post("logout.php", function() {
+            location.reload();
+        });
+    }
+    </script>
 </body>
 </html>

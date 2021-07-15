@@ -1,5 +1,3 @@
-ReactDOM.render(<AppLogin />, document.getElementById('app'));
-
 
 var userLoggedIn;
 var timer;
@@ -33,4 +31,9 @@ function openPage(url) {
 	$("body").scrollTop(0);
 	history.pushState(null, null, url);
 }
+
+
+
+
+
 
