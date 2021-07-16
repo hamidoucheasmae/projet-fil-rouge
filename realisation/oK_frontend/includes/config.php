@@ -4,7 +4,7 @@
 
 	$timezone = date_default_timezone_set("Europe/London");
 
-	$con = mysqli_connect("localhost", "root", "solicode123", "documents_manager");
+	$con = mysqli_connect("localhost", "root", "root", "documents_manager");
 
 	if(mysqli_connect_errno()) {
 		echo "Failed to connect: " . mysqli_connect_errno();

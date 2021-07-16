@@ -5,7 +5,7 @@ require_once('../model/document.php');
 class DocumentsManager  {
 	// get document
 	public function getList(){
-		$dbh = new PDO("mysql:host=localhost;dbname=documents_manager","root","solicode123");
+		$dbh = new PDO("mysql:host=localhost;dbname=documents_manager","root","root");
 		$stack = array();
 		$req = 'SELECT * FROM documents';
 		$result = $dbh->query($req)->fetchAll();
@@ -23,7 +23,7 @@ class DocumentsManager  {
 
 //Add Document
 public function add($document){
-	$dbh = new PDO("mysql:host=localhost;dbname=documents_manager","root","solicode123");
+	$dbh = new PDO("mysql:host=localhost;dbname=documents_manager","root","root");
 	$req = "INSERT INTO `documents`(`name`, `date_expiration`,`etat`) VALUES (:name,:date_expiration,:etat)";
 
 	$addDocumentQuery = $dbh ->prepare($req);
@@ -35,7 +35,7 @@ public function add($document){
 		// delete document
 		public function delete($id){
     	
-			$dbh = new PDO("mysql:host=localhost;dbname=documents_manager","root","solicode123");
+			$dbh = new PDO("mysql:host=localhost;dbname=documents_manager","root","root");
 	
 			$req = "DELETE FROM documents WHERE id = $id ";
 			$deleteDocument= $dbh->prepare($req);
@@ -46,7 +46,7 @@ public function add($document){
 // update Document		
 		public function update($document){
 			$id = $document->getid();
-			$dbh = new PDO("mysql:host=localhost;dbname=documents_manager","root","solicode123");
+			$dbh = new PDO("mysql:host=localhost;dbname=documents_manager","root","root");
 			$req = "UPDATE documents SET name = :name,date_expiration = :date_expiration,etat = :etat WHERE id = $id";
 			$updateDocumentQuery = $dbh ->prepare($req);
 	$updateDocumentQuery -> bindParam(":id",$document->getid(),PDO::PARAM_STR);	
