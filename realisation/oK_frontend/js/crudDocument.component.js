@@ -31,7 +31,7 @@ class CrudDocument extends React.Component {
             method: "POST",
             data: {
                 
-                name : adddocumentname.value,
+                document_name : adddocumentname.value,
                 date_expiration : adddate_expiration.value,
                 etat : addetat.value
                

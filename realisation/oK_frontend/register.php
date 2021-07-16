@@ -56,8 +56,8 @@
 					<h2>Login to your account</h2>
 					<p>
 						<?php echo $account->getError(Constants::$loginFailed); ?>
-						<label for="loginname">Username</label>
-						<input id="loginname" name="loginname" type="text"  value="<?php getInputValue('loginname') ?>" required autocomplete="off">
+						<label for="loginemail">Email</label>
+						<input id="loginemail" name="loginemail" type="text"  value="<?php getInputValue('loginemail') ?>" required autocomplete="off">
 					</p>
 					<p>
 						<label for="loginPassword">Password</label>
@@ -76,23 +76,18 @@
 
 				<form id="registerForm" action="register.php" method="POST">
 					<h2>Create your free account</h2>
-					<p>
-						<?php echo $account->getError(Constants::$usernameCharacters); ?>
-						<?php echo $account->getError(Constants::$usernameTaken); ?>
-						<label for="username">Username</label>
-						<input id="username" name="username" type="text" placeholder="e.g. bartSimpson" value="<?php getInputValue('username') ?>" required>
-					</p>
+				
 
 					<p>
 						<?php echo $account->getError(Constants::$firstNameCharacters); ?>
 						<label for="firstName">First name</label>
-						<input id="firstName" name="firstName" type="text" placeholder="e.g. Bart" value="<?php getInputValue('firstName') ?>" required>
+						<input id="firstName" name="firstname" type="text" placeholder="e.g. Bart" value="<?php getInputValue('firstName') ?>" required>
 					</p>
 
 					<p>
 						<?php echo $account->getError(Constants::$lastNameCharacters); ?>
 						<label for="lastName">Last name</label>
-						<input id="lastName" name="lastName" type="text" placeholder="e.g. Simpson" value="<?php getInputValue('lastName') ?>" required>
+						<input id="lastName" name="lastname" type="text" placeholder="e.g. Simpson" value="<?php getInputValue('lastName') ?>" required>
 					</p>
 
 					<p>

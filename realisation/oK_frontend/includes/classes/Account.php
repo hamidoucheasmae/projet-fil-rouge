@@ -26,7 +26,7 @@
 		}
 
 		public function register($un, $ln, $em, $em2, $pw, $pw2) {
-			$this->validatename($un);
+			$this->validateFirstname($un);
 			$this->validateLastName($ln);
 			$this->validateEmails($em, $em2);
 			$this->validatePasswords($pw, $pw2);
@@ -50,22 +50,22 @@
 
 		private function insertUserDetails($un, $ln, $em, $pw) {
 			$encryptedPw = md5($pw);
-			$profilePic = "assets/images/profile-pics/head_emerald.png";
+			$picture = "assets/images/profile-pics/head_emerald.png";
 			$date = date("Y-m-d");
 
-			$result = mysqli_query($this->con, "INSERT INTO clients VALUES ('', '$un', '$ln', '$em', '$encryptedPw', '$date', '$profilePic')");
+			$result = mysqli_query($this->con, "INSERT INTO clients VALUES ('', '$un', '$ln', '$em', '$encryptedPw', '$date', '$picture')");
 
 			return $result;
 		}
 
-		private function validatename($un) {
+		private function validateEmails($un) {
 
 			if(strlen($un) > 25 || strlen($un) < 5) {
 				array_push($this->errorArray, Constants::$usernameCharacters);
 				return;
 			}
 
-			$checkUsernameQuery = mysqli_query($this->con, "SELECT name FROM clients WHERE name='$un'");
+			$checkUsernameQuery = mysqli_query($this->con, "SELECT email FROM clients WHERE email='$em'");
 			if(mysqli_num_rows($checkUsernameQuery) != 0) {
 				array_push($this->errorArray, Constants::$nameTaken);
 				return;
@@ -82,7 +82,7 @@
 			}
 		}
 
-		private function validateEmails($em, $em2) {
+		private function validateEmail ($em, $em2) {
 			if($em != $em2) {
 				array_push($this->errorArray, Constants::$emailsDoNotMatch);
 				return;

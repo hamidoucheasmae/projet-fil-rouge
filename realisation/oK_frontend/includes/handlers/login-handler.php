@@ -1,14 +1,14 @@
 <?php
 if(isset($_POST['loginButton'])) {
 	//Login button was pressed
-	$name = $_POST['loginname'];
+	$email = $_POST['loginemail'];
 	$password = $_POST['loginPassword'];
 
-	$result = $account->login($name, $password);
+	$result = $account->login($email, $password);
 
 	if($result == true) {
-		$_SESSION['userLoggedIn'] = $name;
-		header("Location: dashboard.html");
+		$_SESSION['userLoggedIn'] = $email;
+		header("Location: index.html");
 	}
 
 }
