@@ -19,10 +19,10 @@ class Card extends React.Component {
                       <div className="inner">
                         <h3>150
                        
-                                           $query = \"SELECT COUNT(*) totalManager FROM managers;\"; 
+                                           {/* $query = \"SELECT COUNT(*) totalManager FROM managers;\"; 
                                                  $result = mysqli_query( $connection, $query ); 
                                                  $totalManager = mysqli_fetch_assoc( $result ); 
-                                                 echo $totalManager['totalManager']; 
+                                                 echo $totalManager['totalManager'];  */}
                                           
                         </h3>
 

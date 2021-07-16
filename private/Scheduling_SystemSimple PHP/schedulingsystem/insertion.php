@@ -2,7 +2,7 @@
 
 $hostname = "localhost";
 $username = "root";
-$password ="";
+$password ="solicode123";
 $databaseName = "insertion";
 
 $connect = mysqli_connect($hostname, $username, $password, $databaseName);
@@ -86,7 +86,7 @@ if(isset($_POST['insert']))
 
 $hostname = "localhost";
 $username = "root";
-$password = "";
+$password = "solicode123";
 $databaseName = "insertion";
 
 // connect to mysql database
@@ -169,7 +169,7 @@ body {
 
 $hostname = "localhost";
 $username = "root";
-$password = "";
+$password = "solicode123";
 $databaseName = "insertion";
 
 // connect to mysql database
@@ -237,7 +237,7 @@ while($row2 = mysqli_fetch_array($result2))
 
 $hostname = "localhost";
 $username = "root";
-$password = "";
+$password = "solicode123";
 $databaseName = "insertion";
 
 // connect to mysql database
@@ -310,7 +310,7 @@ while($row2 = mysqli_fetch_array($result2))
 
 $hostname = "localhost";
 $username = "root";
-$password = "";
+$password = "solicode123";
 $databaseName = "insertion";
 
 // connect to mysql database
@@ -385,7 +385,7 @@ while($row2 = mysqli_fetch_array($result2))
 
 $hostname = "localhost";
 $username = "root";
-$password = "";
+$password = "solicode123";
 $databaseName = "insertion";
 
 // connect to mysql database

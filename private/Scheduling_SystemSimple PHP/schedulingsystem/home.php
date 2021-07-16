@@ -4,7 +4,7 @@
 
 $hostname = "localhost";
 $username = "root";
-$password = "";
+$password = "solicode123";
 $databaseName = "insertion";
 
 // connect to mysql database

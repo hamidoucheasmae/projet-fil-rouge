@@ -12,7 +12,7 @@ class DocumentsManager  {
 		foreach ($result as $row){
 			$item = new Document($row);
 			$item->setid($row["id"]);
-			$item->setid_client($row["id"]);
+
 			$item->setname($row["name"]);
 			$item->setdate_expiration($row["date_expiration"]);
 			$item->setetat($row["etat"]);
