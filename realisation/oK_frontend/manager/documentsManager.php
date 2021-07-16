@@ -7,12 +7,11 @@ class DocumentsManager  {
 	public function getList(){
 		$dbh = new PDO("mysql:host=localhost;dbname=documents_manager","root","solicode123");
 		$stack = array();
-		$req = 'SELECT * FROM documents';
+		$req = 'SELECT * FROM documents ';
 		$result = $dbh->query($req)->fetchAll();
 		foreach ($result as $row){
 			$item = new Document($row);
-			$item->setid($row["id"]);
-			$item->setid_client($row["id"]);
+			$item->setid($row["id"]);	
 			$item->setname($row["name"]);
 			$item->setdate_expiration($row["date_expiration"]);
 			$item->setetat($row["etat"]);
@@ -24,10 +23,10 @@ class DocumentsManager  {
 //Add Document
 public function add($document){
 	$dbh = new PDO("mysql:host=localhost;dbname=documents_manager","root","solicode123");
-	$req = "INSERT INTO `documents`(`name`, `date_expiration`,`etat`) VALUES (:name,:date_expiration,:etat)";
+	$req = "INSERT INTO documents (`name`,`date_expiration`,`etat`) VALUES (':name', ':date_expiration',':etat') ";
 
 	$addDocumentQuery = $dbh ->prepare($req);
-	$addDocumentQuery -> bindParam(":name",$document->getname(),PDO::PARAM_STR);
+	$addDocumentQuery -> bindParam(":name",$document->getname(),PDO::PARAM_STR);	
 	$addDocumentQuery -> bindParam(":date_expiration",$document->getdate_expiration(),PDO::PARAM_STR);
 	$addDocumentQuery -> bindParam(":etat",$document->getetat(),PDO::PARAM_STR);
 	$addDocumentQuery->execute();

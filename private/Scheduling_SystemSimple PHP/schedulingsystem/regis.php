@@ -1,6 +1,6 @@
 <?php 
  
- $con = mysqli_connect ('localhost', 'root', '');
+ $con = mysqli_connect ('localhost', 'root', 'solicode123');
  
  if (!$con)
  {

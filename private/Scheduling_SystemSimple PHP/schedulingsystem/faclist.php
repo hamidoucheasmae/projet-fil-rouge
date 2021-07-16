@@ -36,9 +36,9 @@ td {
      echo "<tr>
             <td>";
                // your database connection
-         $host       = "localhost"; 
+         $host= "localhost"; 
                $username   = "root"; 
-               $password   = "";
+               $password   = "solicode123";
                $database   = "insertion"; 
          
                // select database

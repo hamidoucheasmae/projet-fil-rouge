@@ -30,7 +30,7 @@ class CrudDocument extends React.Component {
             url: "api/addDocument.php",
             method: "POST",
             data: {
-                name : addclientname.value,
+                
                 name : adddocumentname.value,
                 date_expiration : adddate_expiration.value,
                 etat : addetat.value
@@ -66,7 +66,7 @@ class CrudDocument extends React.Component {
             method: "POST",
             data: {
                 id : i,
-                name: hhhhame.value,
+                name: namejj.value,
                 date_expiration: updateExpiration.value,
                 etat: etat.value
             },
