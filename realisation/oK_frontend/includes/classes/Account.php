@@ -9,11 +9,11 @@
 			$this->errorArray = array();
 		}
 
-		public function login($un, $pw) {
+		public function login($em, $pw) {
 
 			// $pw = md5($pw);
 
-			$query = mysqli_query($this->con, "SELECT * FROM clients WHERE name='$un' AND password='$pw'");
+			$query = mysqli_query($this->con, "SELECT * FROM clients WHERE email='$em' AND password='$pw'");
 
 			if(mysqli_num_rows($query) == 1) {
 				return true;
@@ -28,6 +28,7 @@
 		public function register($un, $ln, $em, $em2, $pw, $pw2) {
 			$this->validateFirstname($un);
 			$this->validateLastName($ln);
+			$this->validateFirstname($em);
 			$this->validateEmails($em, $em2);
 			$this->validatePasswords($pw, $pw2);
 

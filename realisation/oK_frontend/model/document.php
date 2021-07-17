@@ -4,17 +4,17 @@ class Document implements JsonSerializable {
 	public function jsonSerialize()
     {
         return array(
-             'id' => $this->_id,
+             'id_document' => $this->_id_document,
 			 'id_client' => $this->_id_client,
-             'name' => $this->_name,
+             'document_name' => $this->document_name,
              'date_expiration' => $this->_date_expiration,
              'etat' => $this->_etat,
     	
         );
     }
-	private $_id;
+	private $_id_document;
 	private $_id_client;
-	private $_name;
+	private $_document_name;
 	private $_date_expiration;
 	private $_etat;
 	
@@ -23,22 +23,22 @@ class Document implements JsonSerializable {
 		
 	}
 
-		public function getid() { return $this->_id; }
+		public function getid_document() { return $this->_id_document; }
 	
-		public function getname() { return $this->_name; }
+		public function getdocument_name() { return $this->_document_name; }
 		public function getdate_expiration() { return $this->_date_expiration; }
 		public function getetat() { return $this->_etat; }
 		
 
 
-		public function setid($id){
-			$this->_id = (int) $id;
+		public function setid_document($id_document){
+			$this->_id_document = (int) $id_document;
 		}
 
 
 
-		public function setname($name){
-					$this->_name = $name;
+		public function setdocument_name($document_name){
+					$this->document_name = $document_name;
 			}
 		
 		public function setdate_expiration($date_expiration){	

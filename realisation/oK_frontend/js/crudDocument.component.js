@@ -45,12 +45,12 @@ class CrudDocument extends React.Component {
         e.preventDefault();
     }
     // Remove Document
-    removedocument(i) {
+    removedocument(id_document) {
         $.ajax({
             url: "api/deleteDocument.php",
             method: "POST",
             data: {
-                id: i
+                id_document: id_document
             },
             success: function (data) {
                 //   $(this).parent().remove();

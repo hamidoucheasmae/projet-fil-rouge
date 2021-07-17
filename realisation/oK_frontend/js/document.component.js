@@ -7,7 +7,7 @@ class Document extends React.Component {
 
         return (
                 <tr>
-              <td scope="row">{this.props.document.name}</td>
+              <td scope="row">{this.props.document.document_name}</td>
               <td>{this.props.document.date_expiration}</td>
               <td>{this.props.document.etat}</td>
              

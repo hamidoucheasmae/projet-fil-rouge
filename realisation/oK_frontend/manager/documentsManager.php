@@ -26,7 +26,8 @@ public function add($document){
 	$req = "INSERT INTO `documents`(`document_name`, `date_expiration`,`etat`) VALUES (:document_name,:date_expiration,:etat)";
 
 	$addDocumentQuery = $dbh ->prepare($req);
-	$addDocumentQuery -> bindParam(":document_name",$document->getname(),PDO::PARAM_STR);	
+	$addDocumentQuery -> bindParam(":id_document",$document->getid_document(),PDO::PARAM_STR);
+	$addDocumentQuery -> bindParam(":document_name",$document->getdocument_name(),PDO::PARAM_STR);	
 	$addDocumentQuery -> bindParam(":date_expiration",$document->getdate_expiration(),PDO::PARAM_STR);
 	$addDocumentQuery -> bindParam(":etat",$document->getetat(),PDO::PARAM_STR);
 	$addDocumentQuery->execute();
@@ -36,7 +37,7 @@ public function add($document){
     	
 			$dbh = new PDO("mysql:host=localhost;dbname=documents_manager","root","root");
 	
-			$req = "DELETE FROM documents WHERE id = $id_document ";
+			$req = "DELETE FROM documents WHERE id_document = $id_document";
 			$deleteDocument= $dbh->prepare($req);
 			$deleteDocument->execute();
 		}
@@ -48,8 +49,8 @@ public function add($document){
 			$dbh = new PDO("mysql:host=localhost;dbname=documents_manager","root","root");
 			$req = "UPDATE documents SET document_name = :document_name,date_expiration = :date_expiration,etat = :etat WHERE id = $id_document";
 			$updateDocumentQuery = $dbh ->prepare($req);
-	$updateDocumentQuery -> bindParam(":id",$document->getid(),PDO::PARAM_STR);	
-	$updateDocumentQuery -> bindParam(":document_name",$document->getname(),PDO::PARAM_STR);
+	$updateDocumentQuery -> bindParam(":id_document",$document->getid_documents(),PDO::PARAM_STR);	
+	$updateDocumentQuery -> bindParam(":document_name",$document->getdocument_name(),PDO::PARAM_STR);
 	$updateDocumentQuery -> bindParam(":date_expiration",$document->getdate_expiration(),PDO::PARAM_STR);
 	$updateDocumentQuery -> bindParam(":etat",$document->getetat(),PDO::PARAM_STR);
 	$updateDocumentQuery->execute();

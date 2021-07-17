@@ -8,7 +8,7 @@ $(document).ready(function(){
       success:function(data) {
         documentsList = JSON.parse(data);
         for (var i = 0; i < documentsList.length; i++) {
-          $(".classeList").append('<tr class="text-center"><td class="align-middle">' + documentsList[i]["name"] + '</td><td class="align-middle">' + documentsList[i]["date_expiration"] + '</td><td class="align-middle">' + documentsList[i]["etat"] + '</td><td class="align-middle">' +'</td><td class="align-middle"><span class="btn update-btn" data-toggle="modal" data-target="#exampleModal"><img src="/assets/images/edit.svg" width="40" height="40"></span><span class="btn delete-btn ml-2 mb-0 mt-0"><img src="/assets/images/trash.svg" width="40" height="40"></span><input type="hidden" value="" class="stdID"></td></tr>');
+          $(".classeList").append('<tr class="text-center"><td class="align-middle">' + documentsList[i]["document_name"] + '</td><td class="align-middle">' + documentsList[i]["date_expiration"] + '</td><td class="align-middle">' + documentsList[i]["etat"] + '</td><td class="align-middle">' +'</td><td class="align-middle"><span class="btn update-btn" data-toggle="modal" data-target="#exampleModal"><img src="/assets/images/edit.svg" width="40" height="40"></span><span class="btn delete-btn ml-2 mb-0 mt-0"><img src="/assets/images/trash.svg" width="40" height="40"></span><input type="hidden" value="" class="stdID"></td></tr>');
         }
       }
     })
@@ -69,7 +69,7 @@ $(document).ready(function(){
       url:"/api/addDocument.php",
       method:"POST",
       data:{
-        name :document,
+        document_name :document,
         date_expiration :date_expiration,
         etat :etat,
        
