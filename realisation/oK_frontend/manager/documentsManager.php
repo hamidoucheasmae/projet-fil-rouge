@@ -50,7 +50,7 @@ public function add($document){
 			$dbh = new PDO("mysql:host=localhost;dbname=documents_manager","root","root");
 			$req = "UPDATE documents SET id_document = :id_document,document_name = :document_name,date_expiration = :date_expiration,etat = :etat WHERE id_document = $id_document";
 			$updateDocumentQuery = $dbh ->prepare($req);
-
+$updateDocumentQuery -> bindParam(":id_document",$document->getid_document(),PDO::PARAM_STR);
 	$updateDocumentQuery -> bindParam(":document_name",$document->getdocument_name(),PDO::PARAM_STR);
 	$updateDocumentQuery -> bindParam(":date_expiration",$document->getdate_expiration(),PDO::PARAM_STR);
 	$updateDocumentQuery -> bindParam(":etat",$document->getetat(),PDO::PARAM_STR);

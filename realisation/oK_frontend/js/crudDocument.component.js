@@ -60,15 +60,15 @@ class CrudDocument extends React.Component {
 
     }
     //update Docment
-    updatedocument(i) {
+    updatedocument(id_document) {
         $.ajax({
             url: "api/updateDocment.php",
             method: "POST",
             data: {
-                id : i,
-                name: namejj.value,
-                date_expiration: updateExpiration.value,
-                etat: etat.value
+                id_document : id_document.value,
+                document_name: updatedocument_name.value,
+                date_expiration: updatedate_expiration.value,
+                etat: updateetat.value
             },
             success: function (data) {
                 this.chargementDonnees()
@@ -121,18 +121,25 @@ class CrudDocument extends React.Component {
                                     <div className="form-row">
                                         <div className="form-group col-12">
                                             <label htmlFor="inputName4">Document</label>
-                                            <input type="text" className="form-control name" id="adddocumentname" placeholder="entrer votre document" />
-                                            {/* <select className="custom-select rounded-0 name" id="adddocumentname" >
-        <option>Value 1</option>
-        <option>Value 2</option>
-        <option>Value 3</option>
-      </select> */}
+                                            <input type="text" list="documents" className="form-control name" id="adddocumentname"  />
+                                            <datalist id="documents">
+          <option>Carte d’Identité Nationale Électronique (CINE)</option>
+          <option>Passport</option>
+          <option>Permis de conduire</option>
+          <option>Carte grise</option>
+          <option>Carte d’immatriculation</option>
+          <option>Carte de résidence</option>
+          <option>Contrôle technique
+</option>
+          <option>aAsurance des voitures</option>
+        </datalist>
+                                           
                                         </div>
                                     </div>
                                     <div className="form-row">
                                         <div className="form-group col-12">
                                             <label htmlFor="inputLast4">Date d'expiration</label>
-                                            <input type="text" className="form-control date_expiration" id="adddate_expiration" placeholder="Last name" />
+                                            <input type="date" className="form-control date_expiration" id="adddate_expiration" placeholder="Last name" />
                                         </div>
                                     </div>
 

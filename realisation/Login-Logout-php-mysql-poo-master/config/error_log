@@ -1,0 +1,7 @@
+[02-Aug-2018 12:39:17 UTC] PHP Parse error:  syntax error, unexpected 's' (T_STRING), expecting variable (T_VARIABLE) in /home/pavilnen/public_html/sites/megness/Megness2/config/database.php on line 14
+[02-Aug-2018 12:39:32 UTC] PHP Parse error:  syntax error, unexpected 's' (T_STRING), expecting variable (T_VARIABLE) in /home/pavilnen/public_html/sites/megness/Megness2/config/database.php on line 14
+[02-Aug-2018 12:44:06 UTC] PHP Parse error:  syntax error, unexpected 's' (T_STRING), expecting variable (T_VARIABLE) in /home/pavilnen/public_html/sites/megness/Megness2/config/database.php on line 14
+[02-Aug-2018 12:45:42 UTC] PHP Notice:  Undefined index: login in /home/pavilnen/public_html/sites/megness/Megness2/config/valide_admin.php on line 5
+[02-Aug-2018 12:45:42 UTC] PHP Notice:  Undefined index: pass in /home/pavilnen/public_html/sites/megness/Megness2/config/valide_admin.php on line 6
+[02-Aug-2018 13:15:26 UTC] PHP Notice:  Undefined index: Login in /home/pavilnen/public_html/sites/megness/Megness2/config/valider.php on line 5
+[02-Aug-2018 13:15:26 UTC] PHP Notice:  Undefined index: Password in /home/pavilnen/public_html/sites/megness/Megness2/config/valider.php on line 6
