@@ -10,7 +10,7 @@ class DocumentsManager  {
 		$req = 'SELECT * FROM documents ';
 		$result = $dbh->query($req)->fetchAll();
 		foreach ($result as $row){
-			$item = new Document($row);
+			$item = new Document();
 			$item->setid_document($row["id_document"]);	
 			$item->setdocument_name($row["document_name"]);
 			$item->setdate_expiration($row["date_expiration"]);
@@ -23,7 +23,8 @@ class DocumentsManager  {
 //Add Document
 public function add($document){
 	$dbh = new PDO("mysql:host=localhost;dbname=documents_manager","root","root");
-	$req = "INSERT INTO `documents`(`document_name`, `date_expiration`,`etat`) VALUES (:document_name,:date_expiration,:etat)";
+	
+	$req = "INSERT INTO `documents`(`id_document`,`document_name`, `date_expiration`,`etat`) VALUES (:id_document,:document_name,:date_expiration,:etat)";
 
 	$addDocumentQuery = $dbh ->prepare($req);
 	$addDocumentQuery -> bindParam(":id_document",$document->getid_document(),PDO::PARAM_STR);
@@ -45,11 +46,11 @@ public function add($document){
 
 // update Document		
 		public function update($document){
-			$id = $document->getid();
+			$id_document = $document->getid_document();
 			$dbh = new PDO("mysql:host=localhost;dbname=documents_manager","root","root");
-			$req = "UPDATE documents SET document_name = :document_name,date_expiration = :date_expiration,etat = :etat WHERE id = $id_document";
+			$req = "UPDATE documents SET id_document = :id_document,document_name = :document_name,date_expiration = :date_expiration,etat = :etat WHERE id_document = $id_document";
 			$updateDocumentQuery = $dbh ->prepare($req);
-	$updateDocumentQuery -> bindParam(":id_document",$document->getid_documents(),PDO::PARAM_STR);	
+
 	$updateDocumentQuery -> bindParam(":document_name",$document->getdocument_name(),PDO::PARAM_STR);
 	$updateDocumentQuery -> bindParam(":date_expiration",$document->getdate_expiration(),PDO::PARAM_STR);
 	$updateDocumentQuery -> bindParam(":etat",$document->getetat(),PDO::PARAM_STR);

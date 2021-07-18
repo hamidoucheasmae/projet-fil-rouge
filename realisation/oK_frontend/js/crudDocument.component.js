@@ -25,7 +25,7 @@ class CrudDocument extends React.Component {
             });
     }
     //add Document
-    adddocument(e) {
+    adddocument() {
         $.ajax({
             url: "api/addDocument.php",
             method: "POST",
@@ -42,7 +42,7 @@ class CrudDocument extends React.Component {
                 console.log(data)
             }.bind(this)
         })
-        e.preventDefault();
+        .preventDefault();
     }
     // Remove Document
     removedocument(id_document) {
@@ -91,10 +91,10 @@ class CrudDocument extends React.Component {
         let documentsArray = this.state.documentsArray.map((document) => {
             return (
                 <Document
-                    key={document.id}
+                    key={document.id_document}
                     document={document}
-                    onClickClose={this.removedocument.bind(this, document.id)}
-                    onClickUpdate= {this.updatedocument.bind(this,document.id)}
+                    onClickClose={this.removedocument.bind(this, document.id_document)}
+                    onClickUpdate= {this.updatedocument.bind(this,document.id_document)}
                 />
             )
         })

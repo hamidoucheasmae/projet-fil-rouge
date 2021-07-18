@@ -6,7 +6,7 @@ class Document implements JsonSerializable {
         return array(
              'id_document' => $this->_id_document,
 			 'id_client' => $this->_id_client,
-             'document_name' => $this->document_name,
+             'document_name' => $this->_document_name,
              'date_expiration' => $this->_date_expiration,
              'etat' => $this->_etat,
     	
@@ -38,7 +38,7 @@ class Document implements JsonSerializable {
 
 
 		public function setdocument_name($document_name){
-					$this->document_name = $document_name;
+					$this->_document_name = $document_name;
 			}
 		
 		public function setdate_expiration($date_expiration){	
