@@ -7,7 +7,7 @@ class User{
  
     // object properties
     public $id;
-    public $username;
+    public $email;
     public $password;
     public $created;
  
@@ -25,18 +25,18 @@ class User{
         $query = "INSERT INTO
                     " . $this->table_name . "
                 SET
-                    username=:username, password=:password, created=:created";
+                    email=:email, password=:password, created=:created";
     
         // prepare query
         $stmt = $this->conn->prepare($query);
     
         // sanitize
-        $this->username=htmlspecialchars(strip_tags($this->username));
+        $this->email=htmlspecialchars(strip_tags($this->email));
         $this->password=htmlspecialchars(strip_tags($this->password));
         $this->created=htmlspecialchars(strip_tags($this->created));
     
         // bind values
-        $stmt->bindParam(":username", $this->username);
+        $stmt->bindParam(":email", $this->email);
         $stmt->bindParam(":password", $this->password);
         $stmt->bindParam(":created", $this->created);
     
@@ -53,11 +53,11 @@ class User{
     function login(){
         // select all query
         $query = "SELECT
-                    `id`, `username`, `password`, `created`
+                    `id`, `email`, `password`, `created`
                 FROM
                     " . $this->table_name . " 
                 WHERE
-                    username='".$this->username."' AND password='".$this->password."'";
+                    email='".$this->email."' AND password='".$this->password."'";
         // prepare query statement
         $stmt = $this->conn->prepare($query);
         // execute query
@@ -69,7 +69,7 @@ class User{
             FROM
                 " . $this->table_name . " 
             WHERE
-                username='".$this->username."'";
+                email='".$this->email."'";
         // prepare query statement
         $stmt = $this->conn->prepare($query);
         // execute query
