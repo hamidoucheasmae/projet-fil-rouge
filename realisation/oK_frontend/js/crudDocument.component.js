@@ -64,8 +64,6 @@ class CrudDocument extends React.Component {
     //update 
     showUpdateModel(document) {
         this.setState({ document: document })
-
-
     }
 
 
@@ -77,7 +75,7 @@ class CrudDocument extends React.Component {
             url: "api/updateDocment.php",
             method: "POST",
             data: {
-                id_document: this.state.document.id_document,
+                id_document: this.state.document,
                 document_name: updatedocument_name.value,
                 date_expiration: updatedate_expiration.value,
                 etat: updateetat.value
@@ -178,7 +176,7 @@ class CrudDocument extends React.Component {
                         </div>
                     </div>
                 </div>
-{/* edit Model */}
+                {/* edit Model */}
                 <div className="modal fade" id="exampleModalCenter1" tabIndex={-1} role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div className="modal-dialog modal-dialog-centered" role="document">
                         <div className="modal-content">
@@ -198,8 +196,14 @@ class CrudDocument extends React.Component {
                                     <div className="form-row">
                                         <div className="form-group col-12">
                                             <label htmlFor="inputName4">Document</label>
-                                            <input type="text" value={this.state.document.document_name} onChange={(e) => this.setState({ document: { ...this.state.document, document_name: e.target.value } })} className="form-control document_name" id="updatedocument_name" />
-                                           
+                                            <input type="text" 
+
+
+                                            // value={this.state.document.document_name} onChange={(e) => this.setState({ document: { ...this.state.document, document_name: e.target.value } })}
+
+
+                                             className="form-control document_name" id="updatedocument_name" />
+
 
                                         </div>
                                     </div>
