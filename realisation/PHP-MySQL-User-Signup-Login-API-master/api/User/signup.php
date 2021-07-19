@@ -9,29 +9,29 @@ include_once '../objects/user.php';
 $database = new Database();
 $db = $database->getConnection();
  
-$user = new User($db);
+$client = new Client($db);
  
-// set user property values
-$user->email = $_POST['email'];
-$user->password = base64_encode($_POST['password']);
-$user->username = $_POST['username'];
-$user->created = date('Y-m-d H:i:s');
+// set client property values
+$client->email = $_POST['email'];
+$client->password = base64_encode($_POST['password']);
+$client->lastname = $_POST['lastname'];
+$client->created = date('Y-m-d H:i:s');
  
-// create the user
-if($user->signup()){
-    $user_arr=array(
+// create the client
+if($client->signup()){
+    $client_arr=array(
         "status" => true,
         "message" => "Successfully Signup!",
-        "id" => $user->id,
-        "username" => $user->username,
-        "email" => $user->email
+        "id_client" => $client->id_client,
+        "lastname" => $client->lastname,
+        "email" => $client->email
     );
 }
 else{
-    $user_arr=array(
+    $client_arr=array(
         "status" => false,
         "message" => "email already exists!"
     );
 }
-print_r(json_encode($user_arr));
+print_r(json_encode($client_arr));
 ?>

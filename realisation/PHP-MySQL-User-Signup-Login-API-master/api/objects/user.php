@@ -1,13 +1,13 @@
 <?php
-class User{
+class Client{
  
     // database connection and table name
     private $conn;
-    private $table_name = "users";
+    private $table_name = "clients";
  
     // object properties
-    public $id;
-    public $username;
+    public $id_client;
+    public $lastname;
     public $email;
     public $password;
     public $created;
@@ -26,26 +26,26 @@ class User{
         $query = "INSERT INTO
                     " . $this->table_name . "
                 SET
-                username=:username, email=:email, password=:password, created=:created";
+                lastname=:lastname, email=:email, password=:password, created=:created";
     
         // prepare query
         $stmt = $this->conn->prepare($query);
     
         // sanitize
         $this->email=htmlspecialchars(strip_tags($this->email));
-        $this->username=htmlspecialchars(strip_tags($this->username));
+        $this->lastname=htmlspecialchars(strip_tags($this->lastname));
         $this->password=htmlspecialchars(strip_tags($this->password));
         $this->created=htmlspecialchars(strip_tags($this->created));
     
         // bind values
         $stmt->bindParam(":email", $this->email);
-        $stmt->bindParam(":username", $this->username);
+        $stmt->bindParam(":lastname", $this->lastname);
         $stmt->bindParam(":password", $this->password);
         $stmt->bindParam(":created", $this->created);
     
         // execute query
         if($stmt->execute()){
-            $this->id = $this->conn->lastInsertId();
+            $this->id_client = $this->conn->lastInsertId();
             return true;
         }
     
@@ -56,7 +56,7 @@ class User{
     function login(){
         // select all query
         $query = "SELECT
-                    `id`, `email`, `password`, `created`
+                    `id_client`, `email`, `password`, `created`
                 FROM
                     " . $this->table_name . " 
                 WHERE
