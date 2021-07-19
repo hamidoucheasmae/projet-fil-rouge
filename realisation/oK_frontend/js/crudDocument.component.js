@@ -197,7 +197,7 @@ class CrudDocument extends React.Component {
                                         <div className="form-group col-12">
                                             <label htmlFor="inputName4">Document</label>
                                             <input type="text"  
-                                            value={this.state.document.document_name} onChange={(e) => this.setState({ document: {...this.state.document, document_name: e.target.value } })}
+                                            // value={this.state.document.document_name} onChange={(e) => this.setState({ document: {...this.state.document, document_name: e.target.value } })}
                                              className="form-control updatedocument_name" id="updatedocument_name" />
 
 
