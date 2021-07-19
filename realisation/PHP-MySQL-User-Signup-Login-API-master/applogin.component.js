@@ -26,13 +26,13 @@ class Login extends React.Component {
         }
 
         render() {
-            let array = this.state.array.map((user) => {
+            let array = this.state.array.map((client) => {
                 return (
-                    <user
-                        key={user.id_user}
-                        user={user}
-                        onClickLogin={this.loginuser.bind(this, user.id_user)}
-                        onClickSignup= {this.signupuser.bind(this,user.id_user)}
+                    <client
+                        key={client.id_client}
+                        client={client}
+                        onClickLogin={this.loginclient.bind(this, client.id_client)}
+                        onClickSignup= {this.signupclient.bind(this,client.id_client)}
                     />
                 )
             })

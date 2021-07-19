@@ -5,11 +5,21 @@ class Document extends React.Component {
 
     render() {
 
+      let date = new Date().toLocaleTimeString();
+      let className = "";
+      className += this.props.document.date_expiration > date ? "text-danger" : "text-success";
+
+
+
+
         return (
+
+
+
                 <tr>
               <td scope="row">{this.props.document.document_name}</td>
               <td>{this.props.document.date_expiration}</td>
-              <td>{this.props.document.etat}</td>
+              <td className={className}>{this.props.document.etat}</td>
              
               <td>
                 <svg xmlns="http://www.w3.org/2000/svg" width={22} height={22} fill="currentColor" className="bi bi-pencil-square text-success ml-5" viewBox="0 0 16 16" onClick={this.props.onClickUpdate} data-toggle="modal" data-target="#exampleModalCenter1">

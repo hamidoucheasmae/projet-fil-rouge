@@ -48,11 +48,12 @@ public function add($document){
 public function update($document){
 	$id = $document->getid_document();
 	$dbh = new PDO("mysql:host=localhost;dbname=documents_manager","root","root");
-	$req = "UPDATE documents SET document_name = :document_name,date_expiration = :date_expiration,etat = :etat WHERE id_document = $id";
+	$req = "UPDATE documents SET id_document = :id_document,document_name = :document_name,date_expiration = :date_expiration,etat = :etat WHERE id_document = $id";
 	$updateOuvrierQuery = $dbh ->prepare($req);
-	$updateOuvrierQuery -> bindParam(":document_name",$ouvrier->getNomOuvrier(),PDO::PARAM_STR);
-	$updateOuvrierQuery -> bindParam(":date_expiration",$ouvrier->getNumCIN(),PDO::PARAM_STR);
-	$updateOuvrierQuery -> bindParam(":etat",$ouvrier->getPrixHeure(),PDO::PARAM_STR);
+	$updateOuvrierQuery -> bindParam(":id_document",$document->getid_document(),PDO::PARAM_STR);
+	$updateOuvrierQuery -> bindParam(":document_name",$document->getdocument_name(),PDO::PARAM_STR);
+	$updateOuvrierQuery -> bindParam(":date_expiration",$document->getdate_expiration(),PDO::PARAM_STR);
+	$updateOuvrierQuery -> bindParam(":etat",$document->getetat(),PDO::PARAM_STR);
 	
 
 	$updateOuvrierQuery->execute();		
