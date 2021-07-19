@@ -14,6 +14,7 @@ $user = new User($db);
 // set user property values
 $user->email = $_POST['email'];
 $user->password = base64_encode($_POST['password']);
+$user->username = $_POST['username'];
 $user->created = date('Y-m-d H:i:s');
  
 // create the user
@@ -22,6 +23,7 @@ if($user->signup()){
         "status" => true,
         "message" => "Successfully Signup!",
         "id" => $user->id,
+        "username" => $user->username,
         "email" => $user->email
     );
 }
