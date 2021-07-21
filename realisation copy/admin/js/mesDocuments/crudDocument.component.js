@@ -75,7 +75,7 @@ class CrudDocument extends React.Component {
             url: "api/updateDocment.php",
             method: "POST",
             data: {
-                id_document: this.state.document,
+                id_document: this.state.document.id_document,
                 document_name: updatedocument_name.value,
                 date_expiration: updatedate_expiration.value,
                 etat: updateetat.value
@@ -182,7 +182,7 @@ class CrudDocument extends React.Component {
                     </div>
                 </div>
                 {/* edit Model */}
-                <div className="modal fade" id="exampleModalCenter1" tabIndex={-1} role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div className="modal fade" id="exampleModal1" tabIndex={-1} role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div className="modal-dialog modal-dialog-centered" role="document">
                         <div className="modal-content">
                             <div className="modal-header">
@@ -204,8 +204,8 @@ class CrudDocument extends React.Component {
                                             <input type="text"
                                             // onChange={this.updatedocument_name.bind(this)}  
                                             // defaultValue={this.state.document}
-                                    value={this.state.document} onChange={(e) => {this.setState({ document_name:e.target.value.updatedocument_name })}}
-                    
+                                    // value={this.state.document} onChange={(e) => {this.setState({ document_name:e.target.value.updatedocument_name })}}
+                                    value={this.state.document.id_document} onChange={(e) => this.setState({ document: { ...this.state.document, id_document: e.target.value } })}
                                              className="form-control updatedocument_name" id="updatedocument_name" />
 
 
@@ -215,11 +215,11 @@ class CrudDocument extends React.Component {
                                         <div className="form-group col-12">
                                             <label htmlFor="inputLast4">Date d'expiration</label>
                                             <input type="date" 
-                                               value={this.state.date_expiration} onChange={(e) => {this.setState({ date_expiration:e.target.value})}}
+                                              
                                             className="form-control date_expiration" id="updatedate_expiration" placeholder="date" />
                                         </div>
                                     </div>
-
+                                    value={this.state.document.date_expiration} onChange={(e) => this.setState({ document: { ...this.state.document, date_expiration: e.target.value } })}
                                     <div className="form-row">
                                         <div className="form-group col-12">
                                             <label htmlFor="inputMatricule4">Etat</label>
@@ -231,7 +231,7 @@ class CrudDocument extends React.Component {
 
                                     <div className="input-group text-right">
                                         <div className="input-group-btn">
-                                            <button type="submit" className="btn btn-primary submit  ">AJOUTER DOCUMENT</button>
+                                            <button type="submit" className="btn btn-primary submit  "> ENREGISTER EDIT</button>
 
                                         </div>
                                     </div>
@@ -242,6 +242,9 @@ class CrudDocument extends React.Component {
                         </div>
                     </div>
                 </div>
+
+
+     
 
 
                 <div className="table-responsive">

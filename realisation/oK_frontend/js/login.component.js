@@ -4,48 +4,59 @@ class AppLogin extends React.Component {
     }
     render() {
         return (     
-          <div className="hold-transition login-page">
-          <div className="login-box">
-          {/* /.login-logo */}
-          <div className="card card-outline card-primary">
-            <div className="card-header text-center">
-              <a href="#" className="h2"><b>RAPPEL DES DATTES</b></a>
-            </div>
-            <div className="card-body">
-              <p className="login-box-msg">Sign in to start your session</p>
-              <form action="#" method="post">
-                <div className="input-group mb-3">
-                  <input type="text" className="loginname" placeholder="hhhh" />
-                  <div className="input-group-append">
-                    <div className="input-group-text loginname">
-                      <span className="fas fa-envelope" />
-                    </div>
-                  </div>
+          <div className="login-wrap">
+          <div className="login-html">
+            <input id="tab-1" type="radio" name="tab" className="sign-in" defaultChecked /><label htmlFor="tab-1" className="tab">Sign In</label>
+            <input id="tab-2" type="radio" name="tab" className="sign-up" /><label htmlFor="tab-2" className="tab">Sign Up</label>
+            <div className="login-form">
+              <form className="sign-in-htm" action="./api/user/login.php" method="GET">
+                <div className="group">
+                  <label htmlFor="user" className="label">email</label>
+                  <input id="email" name="email" type="text" className="input" />
                 </div>
-                <div className="input-group mb-3">
-                  <input type="password" className="form-control loginPassword" placeholder="loginPassword" />
-                  <div className="input-group-append">
-                    <div className="input-group-text loginPassword">
-                      <span className="fas fa-lock" />
-                    </div>
-                  </div>
+                <div className="group">
+                  <label htmlFor="pass" className="label">Password</label>
+                  <input id="password" name="password" type="password" className="input" data-type="password" />
                 </div>
-                <div className="row">
-                  {/* /.col */}
-                  <div className="col-12">
-                    <button type="submit" className="btn btn-primary btn-block loginButton">Sign In</button>
-                  </div>
-                  {/* /.col */}
+                <div className="group">
+                  <input id="check" type="checkbox" className="check" defaultChecked />
+                  <label htmlFor="check"><span className="icon" /> Keep me Signed in</label>
+                </div>
+                <div className="group">
+                  <a href="../oK_frontend/dashboard.html"><input type="submit" className="button" defaultValue="Sign In" /></a>
+                </div>
+                <div className="hr" />
+                <div className="foot-lnk">
+                  <a href="#forgot">Forgot Password?</a>
                 </div>
               </form>
-              <p className="mb-0">
-                <a href="register.html" className="text-center">Register a new membership</a>
-              </p>
+              <form className="sign-up-htm" action="./api/user/signup.php" method="POST">
+                <div className="group">
+                  <label htmlFor="user" className="label">lastname</label>
+                  <input id="lastname" name="lastname" type="text" className="input" />
+                </div>
+                <div className="group">
+                  <label htmlFor="user" className="label">email</label>
+                  <input id="email" name="email" type="text" className="input" />
+                </div>
+                <div className="group">
+                  <label htmlFor="pass" className="label">Password</label>
+                  <input id="password" name="password" type="password" className="input" data-type="password" />
+                </div>
+                <div className="group">
+                  <label htmlFor="pass" className="label">Confirm Password</label>
+                  <input id="pass" type="password" className="input" data-type="password" />
+                </div>
+                <div className="group">
+                  <input type="submit" className="button" defaultValue="Sign Up" />
+                </div>
+                <div className="hr" />
+                <div className="foot-lnk">
+                  <label htmlFor="tab-1">Already Member?
+                  </label></div>
+              </form>
             </div>
-            {/* /.card-body */}
           </div>
-          {/* /.card */}
-        </div>
         </div>
 
         )
