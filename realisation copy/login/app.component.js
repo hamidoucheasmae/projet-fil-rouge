@@ -6,8 +6,14 @@ class App extends React.Component {
 
     render() {
 
+
+
+      
         return (
      
+    
+          
+   
 <div className="login-wrap">
         <div className="login-html">
           <input id="tab-1" type="radio" name="tab" className="sign-in" defaultChecked /><label htmlFor="tab-1" className="tab">Sign In</label>
@@ -27,7 +33,7 @@ class App extends React.Component {
                 <label htmlFor="check"><span className="icon" /> Keep me Signed in</label>
               </div>
               <div className="group">
-              <Link to="../landing-page/index.html"> <input type="submit" className="button" defaultValue="Sign In" /></Link> 
+               <input type="submit" className="button" defaultValue="Sign In" />
               </div>
               <div className="hr" />
               
@@ -49,18 +55,25 @@ class App extends React.Component {
                 <label htmlFor="pass" className="label">Confirm Password</label>
                 <input id="pass" type="password" className="input" data-type="password" />
               </div>
+           
               <div className="group">
-                <input type="submit" className="button" defaultValue="Sign Up" />
+            
+              <input type="submit" className="button" defaultValue="Sign Up" />
+            
               </div>
-              <div className="hr" />
-              <div className="foot-lnk">
-                <label htmlFor="tab-1">Already Member?
-                </label></div>
+             
+
+             
             </form>
           </div>
         </div>
       </div>
+         
+         
+        
 
+
+        
         )
     }
 }

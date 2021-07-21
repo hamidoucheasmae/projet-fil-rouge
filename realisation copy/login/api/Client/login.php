@@ -17,20 +17,14 @@ $stmt = $client->login();
 if($stmt->rowCount() > 0){
     // get retrieved row
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
-    // create array
-    $client_arr=array(
-        "status" => true,
-        "message" => "Successfully Login!",
-        "id_client" => $row['id_client'],
-       
-        "email" => $row['email']
-    );
+   
+    header('location:../../../admin/dashboard.html');
+  
 }
 else{
-    $client_arr=array(
-        "status" => false,
-        "message" => "Invalid email or Password!",
-    );
+
+    header('location:../../../landing-page/index.html');
+ 
 }
 // make it json format
 print_r(json_encode($client_arr));
